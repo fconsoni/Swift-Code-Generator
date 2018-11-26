@@ -1,0 +1,7 @@
+struct SimpleStruct {
+  var stringVar: String
+  var intVar: Int
+  let constantVar: Int
+  var optionalVar: String?
+  var arrays: [Float]
+}
