@@ -16,6 +16,7 @@ class Conversor {
     let copy = structParser.parse(structDesc)
       .map(copyGenerator.generateCopyForStruct)
       .getOrElse("")
+    Log.success(copy)
     return copy
   }
 }
