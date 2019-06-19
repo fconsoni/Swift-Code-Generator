@@ -1,34 +1,29 @@
-struct Content: Contentable {
-    var id: String
-    var uri: String?
-    var title: String
+struct Trailer: Contentable {
+    let id: String
+    let title: String
+    let images: [ContentImage]
     var contentType: ContentType
-    var thumbnail: String?
-    var channelId: String?
-    var tvChannel: TVChannel?
-    var channelUri: String?
-    var callSign: String?
-    var genre: String
-    var startTime: TimeInterval?
-    var endTime: TimeInterval?
-    var resources: [String]?
-    var duration: Int
-    var bookmarkPosition: Int
-    var closedCaptioning: Bool?
-    var description: String
-    var sap: Bool?
-    var showType: String?
-    var hd: Bool
-    var isFavorite: Bool
-    var seriesId: String?
-    var seasonId: String?
-    var programId: String?
-    var seasonUri: String?
-    var seasonNumber: Int?
-    var episodeNumber: Int?
-    var images: [ContentImage]
-    var parentalLevel: ParentalLevel
-    var relatedRatings: RelatedRatings?
+    var bookmarkPosition: Int = 0
+    let duration: Int
+    let url: PlayerUrl
+    let releasedYear: Int
+    var resourceId: String = ""
+    var isFavorite: Bool = false
+    var hd: Bool = false
+    var cc: Bool = false
+    var isCatchup: Bool = true
+    var description: String = ""
+    var genre: String = ""
     var credits: Credit
-    var releasedYear: Int
+    var parentalLevel: ParentalLevel
+    var dueDate: TimeInterval?
+    var trailerId: String?
+    
+    func getId() -> String {
+        return id
+    }
+    
+    func getContentType() -> ContentType {
+        return contentType
+    }
 }
